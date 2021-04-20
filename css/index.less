@@ -38,7 +38,8 @@ body {
     text-align: center;
     line-height: 0.8rem;
     color: @blueColor;
-    .title{
+
+    .title {
       margin: 0 auto;
       width: 507 * @width;
       text-align: justify;
@@ -124,6 +125,7 @@ body {
         // border: 1px dashed @borderColor;
         padding: 20 * @height 20 * @width;
         box-sizing: border-box;
+        position: relative;
 
         h3 {
           padding-left: 32 * @width;
@@ -131,6 +133,16 @@ body {
           font-size: 20 * @width;
           background: url(../img/scqy.png) no-repeat center left;
           background-size: contain;
+          position: absolute;
+          z-index: 1;
+        }
+
+        .chart_box {
+          height: 100%;
+          // border: deeppink 3px solid;
+          position: absolute;
+          top: 0;
+          left: 0;
         }
       }
 
@@ -178,5 +190,188 @@ body {
   width: 100%;
   height: calc(100% - 20 * @height);
   margin-top: 9 * @height;
-  border: 1px dashed;
+  // border: 1px dashed;
+}
+
+.moneyBar {
+  width: 100%;
+  height: 9 * @height;
+  background: linear-gradient(270deg, #00FDE8 0%, rgba(0, 251, 204, 0.27) 100%);
+}
+
+.numBar {
+  width: 100%;
+  height: 9 * @height;
+  background: linear-gradient(270deg, rgba(58, 160, 255, 0.27) 0%, #3AA0FF 100%);
+  float: right;
+  // position: absolute;
+  // right: 0 * @width;
+  // bottom: 0;
+}
+
+.sell-swiper {
+  height: calc(100% - 30 * @height);
+  margin-top: 20 * @height;
+
+  .swiper-container {
+    width: 100%;
+    height: calc(100% - 40 * @height);
+    margin-top: 10 * @height;
+    font-size: 12px;
+  }
+
+  .swiper-slide {
+    height: auto !important;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  dl {
+    display: flex;
+    width: 100%;
+    font-size: 12px;
+
+    // border-bottom: 1px solid;
+    dt {
+      color: #7FC9FB;
+
+      &:nth-child(3) {
+        color: #3AA0FF;
+        text-align: right;
+        padding: 0 10 * @width 0 0;
+      }
+
+      &:nth-child(4) {
+        color: #00FDE8;
+        padding: 0 0 0 10 * @width;
+      }
+    }
+
+    dd {
+      &:nth-child(3) {
+        position: relative;
+        padding: 0 10 * @width 0 0;
+
+        span {
+          text-align: right;
+        }
+      }
+
+      &:nth-child(4) {
+        padding: 0 0 0 10 * @width;
+        // border-left: 1px solid;
+      }
+    }
+
+    dt,
+    dd {
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        width: 20%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        width: 30%;
+        box-sizing: border-box;
+      }
+
+      span {
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+
+.import {
+  &_item {
+    display: flex;
+    width: 100%;
+    height: 54 * @height;
+    // border: 1px solid;
+
+    .import_left {
+      width: 106 * @width;
+      height: 54 * @height;
+      font-size: 12 * @width;
+      padding: 4*@height 0 0 5*@width;
+    }
+
+    .swiper-container {
+      width: 100%;
+      font-size: 12px;
+      margin-left: 20px;
+    }
+
+    .swiper-slide {
+      height: auto !important;
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+    }
+    dl {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      dd{
+        &:nth-child(1) {
+          width: calc( 50% - 60*@width );
+        }
+        &:nth-child(2) {
+          width: calc( 50% - 55*@width );
+        }
+        &:nth-child(3) {
+          width: 110*@width;
+        }
+      }
+    }
+
+   
+
+    .drsc {
+      background: url(/img/drsc.png) no-repeat top left;
+      background-size: contain;
+    }
+
+    .drjf {
+      background: url(/img/drjf.png) no-repeat top left;
+      background-size: contain;
+    }
+
+    .drkf {
+      background: url(/img/drkf.png) no-repeat top left;
+      background-size: contain;
+    }
+  }
+
+  &_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 40 * @height);
+    margin-top: 20 * @height;
+
+  }
+
+}
+
+.flower {
+  display: inline-block;
+  width: 12*@width;
+  height: 15*@height;
+  background: url(/img/f.png) no-repeat center;
+  background-size: contain;
+  margin-right: 8*@width;
+
+  &-a {
+    background: url(/img/f-a.png) no-repeat center;
+    background-size: contain;
+  }
 }

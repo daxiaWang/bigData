@@ -9,6 +9,7 @@
     <!-- 引入样式 -->
     <link rel="stylesheet" href="./css/Reset.css">
     <link rel="stylesheet" href="./css/element-ui@2.15.1/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="./css/swiper.css">
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script> -->
     <!-- 引入组件库 -->
     <link rel="stylesheet" href="./css/index.css">
@@ -31,14 +32,51 @@
                 </div>
                 <div class="item_box">
                     <h3>产品销售数据排行榜</h3>
-                    <div class="chart_box">
-
+                    <div class="chart_box sell-swiper">
+                        <dl width="100%">
+                            <dt>产品</dt>
+                            <dt>销售人员</dt>
+                            <dt>销售套数</dt>
+                            <dt>总金额</dt>
+                        </dl>
+                        <div class="swiper-container" ref="sellRef">
+                            <div class="swiper-wrapper">
+                                <dl class="swiper-slide" v-for="(item, index) in tableData">
+                                    <dd>{{item.produce}}</dd>
+                                    <dd>
+                                        <span>{{item.name}}</span>
+                                        <span>{{item.name}}</span>
+                                    </dd>
+                                    <dd>
+                                        <span>{{item.num}}套</span>
+                                        <span class="numBar" :style="{ width: (item.num / numScalePlate)*100 + '%' }"></span>
+                                    </dd>
+                                    <dd>
+                                        <span>{{item.money}}W</span>
+                                        <span class="moneyBar" :style="{ width: (item.money / moneyScalePlate)*100 + '%' }"></span>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="item_box">
                     <h3>产品三端导入</h3>
-                    <div class="chart_box">
-
+                    <div class="chart_box import_box">
+                        <div v-for="item in importData" class="import_item">
+                            <div class="import_left" :class="item.ename">{{item.source}}</div>
+                            <div class="swiper-container" :ref="item.ename + 'Ref'">
+                                <div class="swiper-wrapper">
+                                    <dl class="swiper-slide" v-for="(ite, index) in item.data">
+                                        <dd>{{ite.produce}}</dd>
+                                        <dd> {{ite.name}} </dd>
+                                        <dd>
+                                            <i class="flower" :class="flower.value ? 'flower-a' : ''" v-for="flower in ite.info"></i>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -90,13 +128,14 @@
 <script src="./js/vue@2.6.12"></script>
 <script src="./js/element-ui@2.15.1.js"></script>
 <script src="./js/jquery-2.2.1.min.js"></script>
-<script src="./js/echarts@5.1.0/dist/echarts.min.js"></script>
-<!-- <script src="./js/echarts.js"></script> -->
+<!-- <script src="./js/echarts@5.1.0/dist/echarts.min.js"></script> -->
+<script src="./js/echarts.js"></script>
 <script src="./data/js/china.js"></script>
 <!-- <script src="./data/json/china.json"></script> -->
 <!-- <script src="./js/flexible.js"></script> -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> -->
 <script src="./js/less.js"></script>
+<script src="./js/swiper.min.js"></script>
 <script src="./js/axios.min.js"></script>
 <script src="./js/axios.js"></script>
 <script src="./js/index.js"></script>
