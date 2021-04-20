@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="./css/Reset.css">
+    <link rel="stylesheet" href="./css/element-ui@2.15.1/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="./css/swiper.css">
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script> -->
+    <!-- 引入组件库 -->
+    <!-- <link rel="stylesheet" href="./css/index.css"> -->
+    <!-- <link rel="stylesheet/less" type="text/css" href="./css/index.less" /> -->
+    <style>
+        .chart_box {
+            width: 1000px;
+            height: 500px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="wrap">
+
+        <div class="item_box">
+            <div class="chart_box" id="main1">
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+<script src="./js/vue@2.6.12"></script>
+<script src="./js/element-ui@2.15.1.js"></script>
+<script src="./js/jquery-2.2.1.min.js"></script>
+<!-- <script src="./js/echarts@5.1.0/dist/echarts.min.js"></script> -->
+<script src="./js/echarts.js"></script>
+<script src="./data/js/china.js"></script>
+<!-- <script src="./data/json/china.json"></script> -->
+<!-- <script src="./js/flexible.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> -->
+<script src="./js/less.js"></script>
+<script src="./js/swiper.min.js"></script>
+<script src="./js/axios.min.js"></script>
+<script src="./js/axios.js"></script>
+<script>
+    $(function() {
+        var myChart = echarts.init(document.getElementById('main1'));
+        myChart.setOption({
+            title: {
+                text: ""
+            },
+            tooltip: {
+                trigger: 'axis',
+                showDelay: 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
+                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            legend: {
+                data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+            },
+            calculable: true,
+            xAxis: [{
+                type: 'category',
+                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+            }],
+            yAxis: [{
+                type: 'value'
+            }],
+            series: [{
+                name: '直接访问',
+                type: 'bar',
+                stack: '总量',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            position: 'insideRight'
+                        }
+                    }
+                },
+                data: [320, 302, 301, 334, 390, 330, 320]
+            }, {
+                name: '邮件营销',
+                type: 'bar',
+                // stack: '总量',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            position: 'insideRight'
+                        }
+                    }
+                },
+                data: [120, 132, 101, 134, 90, 230, 210]
+            }, {
+                name: '联盟广告',
+                type: 'bar',
+                // stack: '总量',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            position: 'insideRight'
+                        }
+                    }
+                },
+                data: [220, 182, 191, 234, 290, 330, 310]
+            }, {
+                name: '视频广告',
+                type: 'bar',
+                stack: '总量',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            position: 'insideRight'
+                        }
+                    }
+                },
+                data: [150, 212, 201, 154, 190, 330, 410]
+            }, {
+                name: '搜索引擎',
+                type: 'bar',
+                stack: '总量',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            position: 'insideRight'
+                        }
+                    }
+                },
+                data: [820, 832, 901, 934, 1290, 1330, 1320]
+            }]
+        });
+    });
+</script>
+
+</html>

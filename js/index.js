@@ -356,6 +356,7 @@ new Vue({
         this.initReviewBox()
         this.initClassfiyBox()
         this.initIncrementBox()
+        this.initMoneyBox()
     },
     methods: {
         initSellRef() {
@@ -2014,6 +2015,266 @@ new Vue({
             window.addEventListener("resize", () => {
                 $incrementBox.resize();
             });
+        },
+        initMoneyBox() {
+            let $moneyBox = echarts.init(document.getElementById("moneyBox"))
+
+
+            window.addEventListener("resize", function(params) {
+                $moneyBox.resize()
+            })
+
+            let option = {
+                title: {
+                    text: ""
+                },
+                grid: {
+                    left: '3%',
+                    right: '20%',
+                    bottom: '3%',
+                    top: '10%',
+                    containLabel: true
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    showDelay: 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
+                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                legend: {
+                    data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+                },
+                calculable: true,
+                xAxis: [{
+                    type: 'category',
+                    boundaryGap: false,
+                    axisLabel: {
+                        verticalAlign: 'middle',
+                        margin: 20,
+                        color: 'rgba(255, 255, 255, 0.8)'
+                    },
+                    axisLine: {
+                        show: true,
+                        // color: '#fff',
+                        lineStyle: {
+                            color: 'rgba(255, 255, 255, 0.35)',
+                            width: 1,
+                            type: 'solid'
+                        }
+                    },
+                    axisTick: {
+                        show: false
+                    },
+                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                }],
+                yAxis: [{
+                    type: 'value',
+                    nameLocation: 'end', // 轴名称相对位置value
+                    offset: 5, // x轴相对于默认位置的偏移
+                    nameTextStyle: { // 坐标轴名称样式
+                        color: 'rgba(255, 255, 255, 0.8)',
+                        padding: [0, 0, 10, -40] // 坐标轴名称相对位置
+                    },
+                    nameGap: 5, // 坐标轴名称与轴线之间的距离
+                    axisLabel: {
+                        verticalAlign: 'middle',
+                        color: 'rgba(255, 255, 255, 0.8)',
+                        // fontSize: '12'
+                    },
+                    axisLine: {
+                        show: false,
+                        color: '#fff',
+                    },
+                    splitLine: { // gird区域中的分割线
+                        show: true, // 是否显示
+                        lineStyle: {
+                            color: 'rgba(255, 255, 255, 0.1)',
+                            width: 1,
+                            type: 'solid'
+                        }
+                    },
+                    axisTick: {
+                        show: false
+                    }
+
+                }],
+                series: [{
+                        name: '直接访问',
+                        type: 'bar',
+                        stack: '总量',
+                        itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+                        data: [320, 302, 301, 334, 390, 330, 320]
+                    },
+                    {
+                        name: '邮件营销',
+                        type: 'bar',
+                        stack: '总量',
+                        itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+                        data: [120, 132, 101, 134, 90, 230, 210]
+                    },
+                    {
+                        name: '联盟广告',
+                        type: 'bar',
+                        stack: '总量',
+                        itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+                        data: [220, 182, 191, 234, 290, 330, 310]
+                    },
+                    {
+                        name: '视频广告',
+                        type: 'bar',
+                        stack: '总量',
+                        itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+                        data: [150, 212, 201, 154, 190, 330, 410]
+                    },
+                    {
+                        name: '搜索引擎',
+                        type: 'bar',
+                        stack: '总量',
+                        itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+                        data: [820, 832, 901, 934, 1290, 1330, 1320]
+                    }
+                ]
+            }
+            $moneyBox.setOption(option)
+        },
+        initMoneyBox1() {
+            let $moneyBox = echarts.init(document.getElementById("moneyBox"))
+
+            $moneyBox.setOption(option)
+            window.addEventListener("resize", function(params) {
+                $moneyBox.resize()
+            })
+
+            let option = {
+                tooltip: { //鼠标悬停提示内容
+                    trigger: 'axis',
+                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                        type: 'cross' // 十字线显示
+                    }
+                },
+                legend: {
+                    y: '20px',
+                    data: ['标准保费', '增长'],
+                    selectedMode: false,
+                },
+                xAxis: [
+                    //X轴
+                    {
+                        type: 'category',
+                        data: [1, 2, 3, 4, 5, 6],
+                        axisLabel: { interval: 0 },
+                    },
+                    //x轴显示两组数据  第2个X轴
+                    {
+                        type: 'category',
+                        axisLine: { show: false },
+                        axisTick: { show: false },
+                        axisLabel: { show: false, interval: 0 },
+                        splitArea: { show: false },
+                        splitLine: { show: false },
+                        data: [1, 2, 3, 4, 5, 6],
+                    }
+                ],
+                yAxis: [ //两个y轴  左边y轴
+                    {
+                        type: 'value',
+                        name: "金额(元)",
+
+                        axisLabel: {
+                            show: true,
+                            interval: 'auto',
+                            formatter: '{value} '
+                        },
+                        splitNumber: 10,
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                type: 'dashed'
+                            }
+                        },
+                        // splitArea: {
+                        //     show: false
+                        // },
+                        // max: 100,
+                        // interval: 10,
+                    },
+                    //右边y轴
+                    {
+                        type: 'value',
+                        name: "增长",
+                        axisLabel: {
+                            show: true,
+                            interval: 'auto',
+                            formatter: '{value} %'
+                        },
+                        splitNumber: 10,
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                type: 'dashed'
+                            }
+                        },
+                        splitArea: {
+                            show: false
+                        },
+                        // max: 100,
+                        // interval: 10,
+                    }
+                ],
+                series: [ //用于指定图标显示类型
+                    //第一个柱状图的数据
+                    {
+                        name: '标准保费',
+                        type: 'bar',
+                        yAxisIndex: '0', // 第一个柱状图的数据
+                        itemStyle: { normal: { color: '#2d91ff', label: { show: true } } },
+                        data: [100, 200, 30, 90, 210, 110]
+                    },
+                    //第二个柱状图的数据
+                    {
+                        name: '承保',
+                        type: 'bar',
+                        xAxisIndex: 1, //第二个柱状图的数据
+                        itemStyle: {
+                            normal: {
+                                color: '#d5e9ff',
+                                label: {
+                                    show: true,
+                                    formatter: function(p) {
+                                        return p.value > 0 ? (p.value + '\n') : '';
+                                    }
+                                }
+                            }
+                        },
+                        data: [120, 300, 100, 170, 300, 200]
+                    },
+                    //右边Y轴的数据 
+                    {
+                        name: '增长',
+                        type: 'line',
+                        symbol: 'emptyCircle',
+                        showAllSymbol: true, //动画效果
+                        symbolSize: 3,
+                        smooth: true, //光滑的曲线
+                        yAxisIndex: '1',
+                        itemStyle: {
+                            normal: {
+                                color: '#ffb348',
+                                label: {
+                                    show: true,
+                                    formatter: '{c}%',
+                                    textStyle: {
+                                        color: '#000000'
+                                    }
+                                }
+                            }
+                        },
+                        data: [3, 9, 2, 5, 7, 10]
+                    },
+                ]
+            };
+
         }
     },
 })
