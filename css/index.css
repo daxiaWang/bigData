@@ -249,6 +249,7 @@ body {
 }
 .import_item dl dd:nth-child(3) {
   width: 5.72916667vw;
+  text-align: right;
 }
 .import_item .drsc {
   background: url(/img/drsc.png) no-repeat top left;
@@ -280,4 +281,24 @@ body {
 .flower-a {
   background: url(/img/f-a.png) no-repeat center;
   background-size: contain;
+}
+.maptooltip_box {
+  width: 155px;
+  height: 126px;
+  background: url(/img/tooltip.png) no-repeat center;
+  background-size: contain;
+  font-size: 12px;
+  padding: 5px 0;
+}
+.maptooltip_box h4 {
+  color: #7FC9FB;
+  font-size: 14px;
+  padding: 2px 5px;
+}
+.maptooltip_box .maptooltip_cont p {
+  line-height: 25px;
+  padding: 2px 6px;
+}
+.maptooltip_box .maptooltip_cont p:nth-child(2n-1) {
+  background-color: rgba(32, 124, 254, 0.15);
 }

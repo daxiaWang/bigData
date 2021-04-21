@@ -329,6 +329,7 @@ body {
         }
         &:nth-child(3) {
           width: 110*@width;
+          text-align: right;
         }
       }
     }
@@ -373,5 +374,28 @@ body {
   &-a {
     background: url(/img/f-a.png) no-repeat center;
     background-size: contain;
+  }
+}
+.maptooltip_box{
+  width: 155px;
+  height: 126px;
+  background: url(/img/tooltip.png) no-repeat center;
+  background-size: contain;
+  font-size:12px;
+  padding: 5px 0;
+  h4{
+    color: #7FC9FB;
+    font-size: 14px;
+    padding: 2px 5px;
+  }
+  .maptooltip_cont{
+    // margin-top: 10px;
+    p{
+      line-height: 25px;
+      padding: 2px 6px;
+      &:nth-child(2n-1) {
+        background-color: rgba(32, 124, 254, 0.15);
+      }
+    }
   }
 }

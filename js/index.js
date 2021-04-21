@@ -8,6 +8,7 @@ new Vue({
     el: "#app",
     data: function() {
         return {
+            mTime: "",
             moneyScalePlate: 500,
             numScalePlate: 60,
             importData: {
@@ -15,7 +16,7 @@ new Vue({
                     source: "导入市场",
                     ename: "drsc",
                     data: [{
-                            produce: "产品a",
+                            produce: "产品1",
                             name: "张三",
                             info: [
                                 { value: false },
@@ -25,7 +26,7 @@ new Vue({
                             ]
                         },
                         {
-                            produce: "产品f",
+                            produce: "产品2",
                             name: "张三11",
                             info: [
                                 { value: false },
@@ -34,11 +35,31 @@ new Vue({
                             ]
                         },
                         {
-                            produce: "产品w",
+                            produce: "产品3",
                             name: "张11",
                             info: [
                                 { value: false },
                                 { value: false },
+                                { value: true },
+                                { value: true }
+                            ]
+                        },
+                        {
+                            produce: "产品4",
+                            name: "张4",
+                            info: [
+                                { value: false },
+                                { value: true },
+                                { value: false },
+                                { value: false }
+                            ]
+                        },
+                        {
+                            produce: "产品5",
+                            name: "张5",
+                            info: [
+                                { value: true },
+                                { value: true },
                                 { value: true },
                                 { value: true }
                             ]
@@ -216,128 +237,750 @@ new Vue({
                 },
             ],
             mapData: [{
-                    name: '北京',
-                    value: 125.0529252
+                    "time": "一月",
+                    "data": [{
+                            name: '北京',
+                            value: 125.0529252
+                        },
+                        {
+                            name: '天津',
+                            value: 94.278137
+                        },
+                        {
+                            name: '河北',
+                            value: 765.636856
+                        },
+                        {
+                            name: '山西',
+                            value: 303.235364
+                        },
+                        {
+                            name: '内蒙古',
+                            value: 238.751868
+                        },
+                        {
+                            name: '辽宁',
+                            value: 115.487365
+                        },
+
+                        {
+                            name: '安徽',
+                            value: 471.982985
+                        },
+                        {
+                            name: '福建',
+                            value: 721.650902
+                        },
+                        {
+                            name: '江西',
+                            value: 154.718086
+                        },
+                        {
+                            name: '山东',
+                            value: 503.987678
+                        },
+                        {
+                            name: '河南',
+                            value: 428.966325
+                        },
+                        {
+                            name: '湖北',
+                            value: 248.837357
+                        },
+                        {
+                            name: '湖南',
+                            value: 385.493622
+                        },
+
+                    ]
                 },
                 {
-                    name: '天津',
-                    value: 94.278137
+                    "time": "二月",
+                    "data": [{
+                            name: '吉林',
+                            value: 125.00734
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 462.5167856
+                        },
+                        {
+                            name: '上海',
+                            value: 57.306289
+                        },
+                        {
+                            name: '江苏',
+                            value: 548.488597
+                        },
+                        {
+                            name: '浙江',
+                            value: 167.647803
+                        },
+                        {
+                            name: '安徽',
+                            value: 471.982985
+                        },
+                        {
+                            name: '福建',
+                            value: 721.650902
+                        },
+                        {
+                            name: '江西',
+                            value: 154.718086
+                        },
+                        {
+                            name: '山东',
+                            value: 503.987678
+                        },
+                        {
+                            name: '河南',
+                            value: 428.966325
+                        },
+                        {
+                            name: '湖北',
+                            value: 248.837357
+                        },
+                        {
+                            name: '湖南',
+                            value: 385.493622
+                        },
+                        {
+                            name: '广东',
+                            value: 274.71366
+                        },
+                        {
+                            name: '广西',
+                            value: 125.26922
+                        },
+                        {
+                            name: '海南',
+                            value: 226.455853
+                        },
+                        {
+                            name: '重庆',
+                            value: 220.577822
+                        },
+                        {
+                            name: '四川',
+                            value: 90.743219
+                        },
+                        {
+                            name: '贵州',
+                            value: 130.156798
+                        },
+                        {
+                            name: '云南',
+                            value: 67.803895
+                        },
+                    ]
+                }, {
+                    time: "三月",
+                    "data": [{
+                            name: '广东',
+                            value: 274.71366
+                        },
+                        {
+                            name: '贵州',
+                            value: 130.156798
+                        },
+                        {
+                            name: '云南',
+                            value: 67.803895
+                        },
+                        {
+                            name: '陕西',
+                            value: 187.289381
+                        },
+                        {
+                            name: '甘肃',
+                            value: 233.232202
+                        },
+                        {
+                            name: '青海',
+                            value: 457.2709503
+                        },
+                        {
+                            name: '宁夏',
+                            value: 599.0952262
+                        },
+                        {
+                            name: '新疆',
+                            value: 123.991132
+                        },
+                        {
+                            name: '西藏',
+                            value: 323.991132
+                        },
+                    ]
                 },
                 {
-                    name: '河北',
-                    value: 765.636856
+                    time: "四月",
+                    "data": [{
+                            name: '广东',
+                            value: 274.71366
+                        },
+                        {
+                            name: '贵州',
+                            value: 130.156798
+                        },
+                        {
+                            name: '云南',
+                            value: 67.803895
+                        },
+                        {
+                            name: '吉林',
+                            value: 125.00734
+                        },
+                        {
+                            name: '河南',
+                            value: 462.5167856
+                        },
+                        {
+                            name: '上海',
+                            value: 57.306289
+                        },
+                        {
+                            name: '江苏',
+                            value: 548.488597
+                        },
+                        {
+                            name: '浙江',
+                            value: 167.647803
+                        },
+                        {
+                            name: '北京',
+                            value: 187.289381
+                        },
+                        {
+                            name: '甘肃',
+                            value: 233.232202
+                        },
+                        {
+                            name: '青海',
+                            value: 457.2709503
+                        },
+                        {
+                            name: '宁夏',
+                            value: 599.0952262
+                        },
+                        {
+                            name: '新疆',
+                            value: 123.991132
+                        },
+                        {
+                            name: '西藏',
+                            value: 323.991132
+                        },
+                    ]
+                }, {
+                    time: "五月",
+                    "data": [{
+                            name: '广东',
+                            value: 274.71366
+                        },
+                        {
+                            name: '贵州',
+                            value: 130.156798
+                        },
+                        {
+                            name: '云南',
+                            value: 67.803895
+                        },
+                        {
+                            name: '陕西',
+                            value: 187.289381
+                        },
+                        {
+                            name: '甘肃',
+                            value: 233.232202
+                        },
+                        {
+                            name: '青海',
+                            value: 457.2709503
+                        },
+                        {
+                            name: '宁夏',
+                            value: 599.0952262
+                        },
+                        {
+                            name: '湖南',
+                            value: 123.991132
+                        },
+                        {
+                            name: '湖北',
+                            value: 323.991132
+                        },
+                        {
+                            name: '吉林',
+                            value: 125.00734
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 462.5167856
+                        },
+                        {
+                            name: '上海',
+                            value: 57.306289
+                        },
+                        {
+                            name: '河南',
+                            value: 548.488597
+                        },
+                        {
+                            name: '浙江',
+                            value: 167.647803
+                        },
+                    ]
+                }, {
+                    "time": "六月",
+                    "data": [{
+                            name: '甘肃',
+                            value: 125.00734
+                        },
+
+                        {
+                            name: '江苏',
+                            value: 548.488597
+                        },
+                        {
+                            name: '浙江',
+                            value: 167.647803
+                        },
+                        {
+                            name: '安徽',
+                            value: 471.982985
+                        },
+                        {
+                            name: '福建',
+                            value: 721.650902
+                        },
+                        {
+                            name: '湖南',
+                            value: 154.718086
+                        },
+                        {
+                            name: '重庆',
+                            value: 503.987678
+                        },
+                        {
+                            name: '河南',
+                            value: 428.966325
+                        },
+                        {
+                            name: '湖北',
+                            value: 248.837357
+                        },
+                        {
+                            name: '江西',
+                            value: 385.493622
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 274.71366
+                        },
+                        {
+                            name: '广西',
+                            value: 125.26922
+                        },
+                        {
+                            name: '海南',
+                            value: 226.455853
+                        },
+                        {
+                            name: '山东',
+                            value: 220.577822
+                        },
+                        {
+                            name: '广东',
+                            value: 90.743219
+                        },
+                        {
+                            name: '贵州',
+                            value: 130.156798
+                        },
+                        {
+                            name: '云南',
+                            value: 67.803895
+                        },
+                    ]
+                }, {
+                    "time": "七月",
+                    "data": [{
+                            name: '北京',
+                            value: 125.0529252
+                        },
+                        {
+                            name: '天津',
+                            value: 94.278137
+                        },
+                        {
+                            name: '河北',
+                            value: 765.636856
+                        },
+                        {
+                            name: '山西',
+                            value: 303.235364
+                        },
+                        {
+                            name: '内蒙古',
+                            value: 238.751868
+                        },
+                        {
+                            name: '辽宁',
+                            value: 115.487365
+                        },
+
+                        {
+                            name: '安徽',
+                            value: 471.982985
+                        },
+                        {
+                            name: '福建',
+                            value: 721.650902
+                        },
+                        {
+                            name: '江西',
+                            value: 154.718086
+                        },
+                        {
+                            name: '山东',
+                            value: 503.987678
+                        },
+                        {
+                            name: '河南',
+                            value: 428.966325
+                        },
+                        {
+                            name: '湖北',
+                            value: 248.837357
+                        },
+                        {
+                            name: '湖南',
+                            value: 385.493622
+                        }, ,
+                        {
+                            name: '新疆',
+                            value: 428.966325
+                        },
+                        {
+                            name: '宁夏',
+                            value: 248.837357
+                        },
+                        {
+                            name: '西藏',
+                            value: 385.493622
+                        },
+                    ]
                 },
                 {
-                    name: '山西',
-                    value: 303.235364
+                    "time": "八月",
+                    "data": [{
+                            name: '吉林',
+                            value: 125.00734
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 462.5167856
+                        },
+                        {
+                            name: '上海',
+                            value: 57.306289
+                        },
+                        {
+                            name: '江苏',
+                            value: 548.488597
+                        },
+                        {
+                            name: '浙江',
+                            value: 167.647803
+                        },
+                        {
+                            name: '甘肃',
+                            value: 471.982985
+                        },
+                        {
+                            name: '内蒙古',
+                            value: 721.650902
+                        },
+                        {
+                            name: '江西',
+                            value: 154.718086
+                        },
+                        {
+                            name: '山东',
+                            value: 503.987678
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 428.966325
+                        },
+                        {
+                            name: '湖北',
+                            value: 248.837357
+                        },
+                        {
+                            name: '湖南',
+                            value: 385.493622
+                        },
+                        {
+                            name: '广东',
+                            value: 274.71366
+                        },
+                        {
+                            name: '广西',
+                            value: 125.26922
+                        },
+                        {
+                            name: '海南',
+                            value: 226.455853
+                        },
+                        {
+                            name: '重庆',
+                            value: 220.577822
+                        },
+                        {
+                            name: '四川',
+                            value: 90.743219
+                        },
+                        {
+                            name: '贵州',
+                            value: 130.156798
+                        },
+                        {
+                            name: '西藏',
+                            value: 67.803895
+                        },
+                    ]
+                }, {
+                    time: "九月",
+                    "data": [{
+                            name: '广东',
+                            value: 274.71366
+                        },
+                        {
+                            name: '贵州',
+                            value: 130.156798
+                        },
+                        {
+                            name: '云南',
+                            value: 67.803895
+                        },
+                        {
+                            name: '陕西',
+                            value: 187.289381
+                        },
+                        {
+                            name: '甘肃',
+                            value: 233.232202
+                        },
+                        {
+                            name: '青海',
+                            value: 457.2709503
+                        },
+                        {
+                            name: '宁夏',
+                            value: 599.0952262
+                        },
+                        {
+                            name: '新疆',
+                            value: 123.991132
+                        },
+                        {
+                            name: '西藏',
+                            value: 323.991132
+                        },
+                    ]
                 },
                 {
-                    name: '内蒙古',
-                    value: 238.751868
-                },
-                {
-                    name: '辽宁',
-                    value: 115.487365
-                },
-                {
-                    name: '吉林',
-                    value: 125.00734
-                },
-                {
-                    name: '黑龙江',
-                    value: 462.5167856
-                },
-                {
-                    name: '上海',
-                    value: 57.306289
-                },
-                {
-                    name: '江苏',
-                    value: 548.488597
-                },
-                {
-                    name: '浙江',
-                    value: 167.647803
-                },
-                {
-                    name: '安徽',
-                    value: 471.982985
-                },
-                {
-                    name: '福建',
-                    value: 721.650902
-                },
-                {
-                    name: '江西',
-                    value: 154.718086
-                },
-                {
-                    name: '山东',
-                    value: 503.987678
-                },
-                {
-                    name: '河南',
-                    value: 428.966325
-                },
-                {
-                    name: '湖北',
-                    value: 248.837357
-                },
-                {
-                    name: '湖南',
-                    value: 385.493622
-                },
-                {
-                    name: '广东',
-                    value: 274.71366
-                },
-                {
-                    name: '广西',
-                    value: 125.26922
-                },
-                {
-                    name: '海南',
-                    value: 226.455853
-                },
-                {
-                    name: '重庆',
-                    value: 220.577822
-                },
-                {
-                    name: '四川',
-                    value: 90.743219
-                },
-                {
-                    name: '贵州',
-                    value: 130.156798
-                },
-                {
-                    name: '云南',
-                    value: 67.803895
-                },
-                {
-                    name: '陕西',
-                    value: 187.289381
-                },
-                {
-                    name: '甘肃',
-                    value: 233.232202
-                },
-                {
-                    name: '青海',
-                    value: 457.2709503
-                },
-                {
-                    name: '宁夏',
-                    value: 599.0952262
-                },
-                {
-                    name: '新疆',
-                    value: 123.991132
-                },
-                {
-                    name: '西藏',
-                    value: 323.991132
+                    time: "十月",
+                    "data": [{
+                            name: '广东',
+                            value: 274.71366
+                        },
+                        {
+                            name: '贵州',
+                            value: 130.156798
+                        },
+                        {
+                            name: '云南',
+                            value: 67.803895
+                        },
+                        {
+                            name: '吉林',
+                            value: 125.00734
+                        },
+                        {
+                            name: '河南',
+                            value: 462.5167856
+                        },
+                        {
+                            name: '上海',
+                            value: 57.306289
+                        },
+                        {
+                            name: '江苏',
+                            value: 548.488597
+                        },
+                        {
+                            name: '浙江',
+                            value: 167.647803
+                        },
+                        {
+                            name: '北京',
+                            value: 187.289381
+                        },
+                        {
+                            name: '甘肃',
+                            value: 233.232202
+                        },
+                        {
+                            name: '青海',
+                            value: 457.2709503
+                        },
+                        {
+                            name: '宁夏',
+                            value: 599.0952262
+                        },
+                        {
+                            name: '新疆',
+                            value: 123.991132
+                        },
+                        {
+                            name: '西藏',
+                            value: 323.991132
+                        },
+                    ]
+                }, {
+                    time: "十一月",
+                    "data": [{
+                            name: '广东',
+                            value: 274.71366
+                        },
+                        {
+                            name: '贵州',
+                            value: 130.156798
+                        },
+                        {
+                            name: '云南',
+                            value: 67.803895
+                        },
+                        {
+                            name: '陕西',
+                            value: 187.289381
+                        },
+                        {
+                            name: '甘肃',
+                            value: 233.232202
+                        },
+                        {
+                            name: '青海',
+                            value: 457.2709503
+                        },
+                        {
+                            name: '宁夏',
+                            value: 599.0952262
+                        },
+                        {
+                            name: '湖南',
+                            value: 123.991132
+                        },
+                        {
+                            name: '湖北',
+                            value: 323.991132
+                        },
+                        {
+                            name: '吉林',
+                            value: 125.00734
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 462.5167856
+                        },
+                        {
+                            name: '上海',
+                            value: 57.306289
+                        },
+                        {
+                            name: '河南',
+                            value: 548.488597
+                        },
+                        {
+                            name: '浙江',
+                            value: 167.647803
+                        },
+                    ]
+                }, {
+                    "time": "十二月",
+                    "data": [{
+                            name: '甘肃',
+                            value: 125.00734
+                        },
+
+                        {
+                            name: '江苏',
+                            value: 548.488597
+                        },
+                        {
+                            name: '浙江',
+                            value: 167.647803
+                        },
+                        {
+                            name: '安徽',
+                            value: 471.982985
+                        },
+                        {
+                            name: '福建',
+                            value: 721.650902
+                        },
+                        {
+                            name: '湖南',
+                            value: 154.718086
+                        },
+                        {
+                            name: '重庆',
+                            value: 503.987678
+                        },
+                        {
+                            name: '河南',
+                            value: 428.966325
+                        },
+                        {
+                            name: '湖北',
+                            value: 248.837357
+                        },
+                        {
+                            name: '江西',
+                            value: 385.493622
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 274.71366
+                        },
+                        {
+                            name: '广西',
+                            value: 125.26922
+                        },
+                        {
+                            name: '海南',
+                            value: 226.455853
+                        },
+                        {
+                            name: '山东',
+                            value: 220.577822
+                        },
+                        {
+                            name: '广东',
+                            value: 90.743219
+                        },
+                        {
+                            name: '贵州',
+                            value: 130.156798
+                        },
+                        {
+                            name: '云南',
+                            value: 67.803895
+                        },
+                    ]
                 },
             ]
         }
@@ -349,8 +992,8 @@ new Vue({
         this.initDrjfRef()
         this.initDrkfRef()
             // console.log("this is current swiper instance object", this.swiper);
-            // this.initTimelineOld();
         this.initTimeline();
+        // this.initTimeline();
         this.initProjectIncome()
         this.initOrderTrend()
         this.initReviewBox()
@@ -367,7 +1010,7 @@ new Vue({
                 followFinger: false, // 
                 speed: 400, // 速度
                 // mousewheel: true, // 鼠标滚轮控制
-                loop: true, // 循环
+                loop: $(".sell-swiper .swiper-slide").length > 2, // 循环
                 autoplay: {
                     delay: 1000,
                     stopOnLastSlide: false,
@@ -375,13 +1018,13 @@ new Vue({
                 }
             });
             // 鼠标移入停止自动滚动
-            $('.sell-swiper .swiper-slide').mouseenter(function() {
-                    mySwiper.autoplay.stop();
-                })
-                // 鼠标移出开始自动滚动
-            $('.sell-swiper .swiper-slide').mouseleave(function() {
-                mySwiper.autoplay.start();
-            })
+            // $('.sell-swiper .swiper-slide').mouseenter(function() {
+            //         mySwiper.autoplay.stop();
+            //     })
+            //     // 鼠标移出开始自动滚动
+            // $('.sell-swiper .swiper-slide').mouseleave(function() {
+            //     mySwiper.autoplay.start();
+            // })
         },
         initDrscRef() {
             var mySwiper = new Swiper(this.$refs.drscRef, {
@@ -391,7 +1034,7 @@ new Vue({
                 followFinger: false, // 
                 speed: 400, // 速度
                 // mousewheel: true, // 鼠标滚轮控制
-                loop: true, // 循环
+                loop: $(".drsc-container .swiper-slide").length > 2, // 循环
                 autoplay: {
                     delay: 800,
                     stopOnLastSlide: false,
@@ -403,11 +1046,11 @@ new Vue({
             var mySwiper = new Swiper(this.$refs.drjfRef, {
                 direction: 'vertical',
                 slidesPerView: 3, // 每页显示几个slide
-                spaceBetween: 4, // slide的间距px
+                spaceBetween: 5, // slide的间距px
                 followFinger: false, // 
                 speed: 400, // 速度
                 // mousewheel: true, // 鼠标滚轮控制
-                // loop: true, // 循环
+                loop: $(".drjf-container .swiper-slide").length > 2, // 循环
                 autoplay: {
                     delay: 1000,
                     stopOnLastSlide: false,
@@ -416,6 +1059,7 @@ new Vue({
             });
         },
         initDrkfRef() {
+            console.log("this.$refs.drkfRef", this.$refs.drkfRef)
             var mySwiper = new Swiper(this.$refs.drkfRef, {
                 direction: 'vertical',
                 slidesPerView: 3, // 每页显示几个slide
@@ -423,7 +1067,7 @@ new Vue({
                 followFinger: false, // 
                 speed: 400, // 速度
                 // mousewheel: true, // 鼠标滚轮控制
-                // loop: true, // 循环
+                loop: $(".drkf-container .swiper-slide").length > 2, // 循环
                 autoplay: {
                     delay: 1000,
                     stopOnLastSlide: false,
@@ -431,543 +1075,18 @@ new Vue({
                 }
             });
         },
+
         initTimeline() {
-            let uploadedDataURL = "data/json/china.json";
-            // var uploadedDataURL = "/asset/get/s/data-1528971808162-BkOXf61WX.json";
-            let $mapBox = echarts.init(document.getElementById("mapBox"))
-            var geoGpsMap = {
-                '1': [113.12244, 23.009505],
-                '2': [118.8062, 31.9208],
-                '3': [118.8062, 31.9208],
-                '4': [113.12244, 23.009505],
-                '5': [113.12244, 23.009505],
-                '6': [113.12244, 23.009505],
-            };
-            var geoCoordMap = {
-                "江苏": [118.8062, 31.9208],
-                '黑龙江': [127.9688, 45.368],
-                '内蒙古': [110.3467, 41.4899],
-                "吉林": [125.8154, 44.2584],
-                '北京市': [116.4551, 40.2539],
-                "辽宁": [123.1238, 42.1216],
-                "河北": [114.4995, 38.1006],
-                "天津": [117.4219, 39.4189],
-                "山西": [112.3352, 37.9413],
-                "陕西": [109.1162, 34.2004],
-                "甘肃": [103.5901, 36.3043],
-                "宁夏": [106.3586, 38.1775],
-                "青海": [101.4038, 36.8207],
-                "新疆": [87.9236, 43.5883],
-                "四川": [103.9526, 30.7617],
-                "重庆": [108.384366, 30.439702],
-                "山东": [117.1582, 36.8701],
-                "河南": [113.4668, 34.6234],
-                "安徽": [117.29, 32.0581],
-                "湖北": [114.3896, 30.6628],
-                "浙江": [119.5313, 29.8773],
-                "福建": [119.4543, 25.9222],
-                "江西": [116.0046, 28.6633],
-                "湖南": [113.0823, 28.2568],
-                "贵州": [106.6992, 26.7682],
-                "云南": [102.9199, 25.4663],
-                "广东": [113.12244, 23.009505],
-                "广西": [108.479, 23.1152],
-                "海南": [110.3893, 19.8516],
-                '上海': [121.4648, 31.2891],
-                "西藏": [115.0648, 28.6744],
-            };
-
-
-            var d1 = {
-                '江苏': 15520.7,
-                '黑龙江': 4684.1,
-                '内蒙古': 1828.3,
-                '吉林': 3500.4,
-                '北京市': 6506.3,
-                '辽宁': 9417.2,
-                '河北': 6072.5,
-                '天津': 1830.0,
-                '山西': 3416.8,
-                '陕西': 7418.8,
-                '甘肃': 3898.6,
-                '宁夏': 918.6,
-                '青海': 544.4,
-                '新疆': 3717.6,
-                '四川': 13827.4,
-                '重庆': 6839.9,
-                '山东': 7437.8,
-                '河南': 14018.0,
-                '安徽': 13955.3,
-                '湖北': 10073,
-                '浙江': 13014.5,
-                '福建': 5871.9,
-                '江西': 6779.5,
-                '湖南': 16183.7,
-                '贵州': 8657.1,
-                '云南': 4908.0,
-                '广东': 18078.9,
-                '广西': 5190.4,
-                '海南': 1421.0,
-                '上海': 1331.7,
-                '西藏': 990.5,
-
-            };
-
-            var d2 = {
-                "江苏": 13830.8,
-                '黑龙江': 4286.9,
-                '内蒙古': 1612.5,
-                "吉林": 3635.9,
-                '北京市': 6284.9,
-                "辽宁": 7369.2,
-                "河北": 5327.4,
-                "天津": 1834.5,
-                "山西": 2961.2,
-                "陕西": 6968.0,
-                "甘肃": 4045.3,
-                "宁夏": 9300,
-                "青海": 5602,
-                "新疆": 3594.8,
-                "四川": 13596.9,
-                "重庆": 6228.3,
-                "山东": 6035.6,
-                "河南": 12501.5,
-                "安徽": 8681.0,
-                "湖北": 10203.5,
-                "浙江": 11136.9,
-                "福建": 5164.6,
-                "江西": 6241.8,
-                "湖南": 1313.11,
-                "贵州": 8754.1,
-                "云南": 4879.4,
-                "广东": 12392.6,
-                "广西": 4910.1,
-                '海南': 1372.8,
-                '上海': 1384.4,
-                '西藏': 922.5,
-
-            };
-
-            var d3 = {
-                '江苏': 13358.0,
-                '黑龙江': 3938.6,
-                '内蒙古': 1573.5,
-                '吉林': 3491.0,
-                '北京市': 6151.9,
-                '辽宁': 7363.2,
-                '河北': 5070.1,
-                '天津': 1837.7,
-                '山西': 2637.4,
-                '陕西': 6982.0,
-                '甘肃': 4162.6,
-                '宁夏': 8757,
-                '青海': 5934,
-                '新疆': 3214.8,
-                '四川': 12374.6,
-                '重庆': 6125.5,
-                '山东': 6346.3,
-                '河南': 12052.8,
-                '安徽': 8110.6,
-                '湖北': 10299.0,
-                '浙江': 10501.8,
-                '福建': 5164.9,
-                '江西': 6287.6,
-                '湖南': 12176,
-                '贵州': 8946.4,
-                '云南': 4651.9,
-                '广东': 13034.5,
-                '广西': 4869.9,
-                '海南': 1391.2,
-                '上海': 1441.6,
-                '西藏': 930.5,
-
-
-            };
-
-            var d4 = {
-                "江苏": 12678.3,
-                '黑龙江': 3467,
-                '内蒙古': 1486.7,
-                "吉林": 3298.9,
-                '北京市': 5887.1,
-                "辽宁": 7248.3,
-                "河北": 5002.3,
-                "天津": 1744,
-                "山西": 2515.5,
-                "陕西": 6788,
-                "甘肃": 4263.8,
-                "宁夏": 7345,
-                "青海": 6274,
-                "新疆": 2708.3,
-                "四川": 10909.3,
-                "重庆": 6052.2,
-                "山东": 6529.9,
-                "河南": 11435.1,
-                "安徽": 6910.5,
-                "湖北": 10314.4,
-                "浙江": 10449.7,
-                "福建": 5113.4,
-                "江西": 6299.7,
-                "湖南": 11493.6,
-                "贵州": 9180.3,
-                "云南": 4462.2,
-                "广东": 13741.8,
-                "广西": 4857.8,
-                '海南': 1466,
-                '上海': 1548.5,
-                '西藏': 970.5,
-            };
-
-            var d5 = {
-                '江苏': 12061.2,
-                '黑龙江': 3156.8,
-                '内蒙古': 1326.8,
-                '吉林': 3195.6,
-                '北京市': 5893.5,
-                '辽宁': 7134.3,
-                '河北': 4734.6,
-                '天津': 1745,
-                '山西': 2383.7,
-                '陕西': 7158.3,
-                '甘肃': 4218.5,
-                '宁夏': 6137,
-                '青海': 6443,
-                '新疆': 2120.4,
-                '四川': 9856.9,
-                '重庆': 6058.7,
-                '山东': 6744.3,
-                '河南': 11042.1,
-                '安徽': 6334.7,
-                '湖北': 9835,
-                '浙江': 9838,
-                '福建': 4810.5,
-                '江西': 6068.6,
-                '湖南': 10668,
-                '贵州': 9302.5,
-                '云南': 4148.4,
-                '广东': 14214.4,
-                '广西': 4793.1,
-                '海南': 1438.3,
-                '上海': 1584.5,
-                '西藏': 880.5,
-
-
-            };
-
-            var d6 = {
-                "江苏": 12029.8,
-                '黑龙江': 2975.1,
-                '内蒙古': 1215.8,
-                "吉林": 3159.9,
-                '北京市': 6297.7,
-                "辽宁": 7026.6,
-                "河北": 4473.3,
-                "天津": 1767.9,
-                "山西": 2230.5,
-                "陕西": 7076.1,
-                "甘肃": 4213.3,
-                "宁夏": 5754,
-                "青海": 6313,
-                "新疆": 2027.6,
-                "四川": 9166.8,
-                "重庆": 6015.3,
-                "山东": 6892,
-                "河南": 10929.7,
-                "安徽": 5927.5,
-                "湖北": 8743.2,
-                "浙江": 10189.3,
-                "福建": 4576.1,
-                "江西": 5806.9,
-                "湖南": 10142.8,
-                "贵州": 9375.6,
-                "云南": 3838.1,
-                "广东": 14232.6,
-                "广西": 4708.5,
-                '海南': 1418.7,
-                '上海': 1644.2,
-                '西藏': 790.5,
-            };
-
-            var colors = [
-                ["#1DE9B6", "#1DE9B6", "#FFDB5C", "#FFDB5C", "#04B9FF", "#04B9FF"],
-                ["#1DE9B6", "#F46E36", "#04B9FF", "#5DBD32", "#FFC809", "#FB95D5", "#BDA29A", "#6E7074", "#546570", "#C4CCD3"],
-                ["#37A2DA", "#67E0E3", "#32C5E9", "#9FE6B8", "#FFDB5C", "#FF9F7F", "#FB7293", "#E062AE", "#E690D1", "#E7BCF3", "#9D96F5", "#8378EA", "#8378EA"],
-                ["#DD6B66", "#759AA0", "#E69D87", "#8DC1A9", "#EA7E53", "#EEDD78", "#73A373", "#73B9BC", "#7289AB", "#91CA8C", "#F49F42"],
-            ];
-            var colorIndex = 0;
-
-
-            var year = ["2014", "2015", "2016", "2017", "2018", "2019"];
-            var mapData = [
-                [],
-                [],
-                [],
-                [],
-                [],
-                [],
-            ];
-
-            /*柱子Y名称*/
-            var categoryData = [];
-            var barData = [];
-
-            for (var key in geoCoordMap) {
-                mapData[0].push({
-                    "year": '2014',
-                    "name": key,
-                    "value": d1[key] / 100,
-                    "value1": d1[key] / 100,
-                });
-                mapData[1].push({
-                    "year": '2015',
-                    "name": key,
-                    "value": d1[key] / 100,
-                    "value1": d2[key] / 100,
-                });
-                mapData[2].push({
-                    "year": '2016',
-                    "name": key,
-                    "value": d3[key] / 100,
-                    "value1": d3[key] / 100,
-                });
-                mapData[3].push({
-                    "year": '2017',
-                    "name": key,
-                    "value": d3[key] / 100,
-                    "value1": d4[key] / 100,
-                });
-                mapData[4].push({
-                    "year": '2018',
-                    "name": key,
-                    "value": d5[key] / 100,
-                    "value1": d5[key] / 100,
-                });
-                mapData[5].push({
-                    "year": '2019',
-                    "name": key,
-                    "value": d5[key] / 100,
-                    "value1": d6[key] / 100,
-                });
-            }
-
-            $.getJSON(uploadedDataURL, function(geoJson) {
-
-                echarts.registerMap('china', geoJson);
-                var convertData = function(data) {
-                    var res = [];
-                    for (var i = 0; i < data.length; i++) {
-                        var geoCoord = geoCoordMap[data[i].name];
-                        if (geoCoord) {
-                            res.push({
-                                name: data[i].name,
-                                value: geoCoord.concat(data[i].value)
-                            });
-                        }
-                    }
-                    return res;
-                };
-
-                var convertToLineData = function(data, gps) {
-                    var res = [];
-                    //流
-                    for (var i = 0; i < data.length; i++) {
-                        var dataItem = data[i];
-                        var toCoord = geoCoordMap[dataItem.name];
-                        debugger;
-                        var fromCoord = gps;
-                        if (fromCoord && toCoord) {
-                            res.push([{
-                                coord: fromCoord,
-                                value: dataItem.value
-                            }, {
-                                coord: toCoord,
-                            }]);
-                        }
-                    }
-                    return res;
-                };
-
-                optionXyMap01 = {
-                    timeline: {
-                        data: year,
-                        axisType: 'category',
-                        orient: 'vertical',
-                        autoPlay: true,
-                        playInterval: 3000,
-                        left: 10,
-                        right: null,
-                        top: 20,
-                        bottom: 20,
-                        width: 55,
-                        //  height: null,
-                        label: {
-                            normal: {
-                                textStyle: {
-                                    color: '#ddd'
-                                }
-                            },
-                            emphasis: {
-                                textStyle: {
-                                    color: '#fff'
-                                }
-                            }
-                        },
-                        symbolSize: 10,
-                        lineStyle: {
-                            color: '#555'
-                        },
-                        checkpointStyle: {
-                            borderColor: '#777',
-                            borderWidth: 2
-                        },
-                        controlStyle: {
-                            showNextBtn: true,
-                            showPrevBtn: true,
-                            normal: {
-                                color: '#666',
-                                borderColor: '#666'
-                            },
-                            emphasis: {
-                                color: '#aaa',
-                                borderColor: '#aaa'
-                            }
-                        },
-
-                    },
-                    baseOption: {
-                        animation: true,
-                        animationDuration: 1000,
-                        animationEasing: 'cubicInOut',
-                        animationDurationUpdate: 1000,
-                        animationEasingUpdate: 'cubicInOut',
-                        grid: {
-                            right: '1%',
-                            top: '15%',
-                            bottom: '10%',
-                            width: '20%'
-                        },
-                        tooltip: {
-                            trigger: 'item', // hover触发器
-                            formatter: function(params) {
-                                console.log("params", params)
-                                    // return params
-                                let htmlStr = `
-                                            <div style='font-size:18px;'> ${params.name}</div>
-                                            <p style='text-align:left;margin-top:-10px;'>
-                                                区域对应数据value：${params.name}<br/>
-                                                性能perf：${params.name}<br/>
-                                                下载速度downloadSpeep：${params.name}<br/>
-                                                可用性usability：${params.name}<br/>
-                                                监测点数point：${params.name}<br/>
-                                            </p>
-                                            `
-                                return htmlStr;
-                            }
-                        },
-                        geo: {
-                            show: true,
-                            map: 'china',
-                            roam: true,
-                            zoom: 1,
-                            center: [105, 34.6234],
-                            label: {
-                                emphasis: {
-                                    show: false
-                                }
-                            },
-                            itemStyle: {
-                                normal: {
-
-                                    borderColor: 'rgba(147, 235, 248, 1)',
-                                    borderWidth: 1,
-                                    areaColor: {
-                                        type: 'radial',
-                                        x: 0.5,
-                                        y: 0.5,
-                                        r: 0.8,
-                                        colorStops: [{
-                                            offset: 0,
-                                            color: 'rgba(147, 235, 248, 0)' // 0% 处的颜色
-                                        }, {
-                                            offset: 1,
-                                            color: 'rgba(147, 235, 248, .2)' // 100% 处的颜色
-                                        }],
-                                        globalCoord: false // 缺省为 false
-                                    },
-                                    shadowColor: 'rgba(128, 217, 248, 1)',
-                                    // shadowColor: 'rgba(255, 255, 255, 1)',
-                                    shadowOffsetX: -2,
-                                    shadowOffsetY: 2,
-                                    shadowBlur: 10
-                                },
-                                emphasis: {
-                                    areaColor: '#EEDD78',
-                                    borderWidth: 0
-                                }
-                            }
-                        },
-                        visualMap: {
-                            type: 'piecewise',
-                            right: '2%',
-                            bottom: '2%',
-                            pieces: [
-                                { gt: 500, color: "#207CFE", label: '中标500W以上' }, // (1500, Infinity]
-                                { gt: 300, color: "#3AA0FF", lte: 500, label: '中标300W-500W以上' }, // (100, 200]
-                                { gt: 100, color: "#418DFF", lte: 300, label: '中标100W-300W以上' }, // (100, 200]
-                                { lt: 100, color: "#7FC9FB", label: '中标100W以下' } // (-Infinity, 100)
-                            ],
-                            align: "left",
-                            textStyle: {
-                                color: "#fff"
-                            }
-                        },
-                    },
-                    options: []
-
-                };
-                for (var n = 0; n < year.length; n++) {
-                    optionXyMap01.options.push({
-                        // backgroundColor: '#000000',
-                        series: [
-                            //地图？
-                            {
-                                type: 'map',
-                                map: 'china',
-                                geoIndex: 0,
-                                aspectScale: 0.75, //长宽比
-                                showLegendSymbol: false, // 存在legend时显示
-                                label: {
-                                    emphasis: {
-                                        show: true,
-                                        color: "#fff"
-                                    },
-                                    normal: {
-                                        show: true,
-                                        color: "#fff"
-                                    }
-                                },
-                                emphasis: {
-                                    itemStyle: {
-                                        areaColor: "#3066ba",
-                                        borderColor: "#00FFF6"
-                                    },
-                                },
-                                roam: true,
-
-                                animation: false,
-                                data: mapData
-                            }
-                        ]
-                    })
-                }
-                $mapBox.setOption(optionXyMap01);
-            });
-
-        },
-        initTimelineOld() {
             let $mapBox = echarts.init(document.getElementById("mapBox"))
             window.addEventListener('resize', function() {
                 $mapBox.resize();
+            });
+            let url = "/data/json/china.json"
+            $.getJSON(url, function(csJson) {
+                echarts.registerMap('china', csJson);
+                // dt
+                // var chart = echarts.init(document.getElementById('map'));
+                // chart.setOption(option);
             });
             let monthes = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
             let con = [198];
@@ -980,121 +1099,80 @@ new Vue({
                     shadowColor: 'rgba(0, 0, 0, 0.5)'
                 }
             };
-            // console.log("monthes", monthes)
             let option = {
-                // timeline: {
-                //     axisType: 'category',
-                //     orient: 'vertical',
-                //     autoPlay: true,
-                //     inverse: true,
-                //     playInterval: 5000,
-                //     left: 10,
-                //     right: null,
-                //     top: "20%",
-                //     bottom: 20,
-                //     width: 55,
-                //     height: null,
-                //     label: {
-                //         normal: {
-                //             textStyle: {
-                //                 color: '#ddd'
-                //             }
-                //         },
-                //         emphasis: {
-                //             textStyle: {
-                //                 color: '#fff'
-                //             }
-                //         }
-                //     },
-                //     symbol: 'none',
-                //     lineStyle: {
-                //         color: '#555'
-                //     },
-                //     checkpointStyle: {
-                //         color: '#bbb',
-                //         borderColor: '#777',
-                //         borderWidth: 2
-                //     },
-                //     controlStyle: {
-                //         showNextBtn: false,
-                //         showPrevBtn: false,
-                //         normal: {
-                //             color: '#666',
-                //             borderColor: '#666'
-                //         },
-                //         emphasis: {
-                //             color: '#aaa',
-                //             borderColor: '#aaa'
-                //         }
-                //     },
-                //     data: monthes
-                // },
                 timeline: {
+                    // data: this.mapData.map(function(ele) {
+                    //     return ele.time
+                    // }),
                     data: monthes,
                     axisType: 'category',
                     orient: 'vertical',
                     autoPlay: true,
-                    playInterval: 3000,
-                    left: 10,
+                    playInterval: 5000,
+                    left: 30,
                     right: null,
-                    top: 20,
+                    top: 50,
                     bottom: 20,
                     width: 55,
+                    height: "70%",
+                    inverse: true,
                     //  height: null,
                     label: {
+                        show: true,
                         normal: {
+                            fontSize: "12",
                             textStyle: {
-                                color: '#ddd'
-                            }
+                                color: '#FFFFFF'
+                            },
                         },
                         emphasis: {
                             textStyle: {
                                 color: '#fff'
-                            }
+                            },
+                            fontSize: "12",
                         }
                     },
+                    symbol: "circle",
                     symbolSize: 10,
                     lineStyle: {
-                        color: '#555'
+                        show: true,
+                        color: '#0554A3'
                     },
-                    checkpointStyle: {
-                        borderColor: '#777',
-                        borderWidth: 2
-                    },
-                    controlStyle: {
-                        showNextBtn: true,
-                        showPrevBtn: true,
+                    itemStyle: {
                         normal: {
-                            color: '#666',
-                            borderColor: '#666'
-                        },
-                        emphasis: {
-                            color: '#aaa',
-                            borderColor: '#aaa'
+                            color: "#0554A3",
                         }
                     },
-
+                    checkpointStyle: {
+                        color: '#207CFE',
+                        borderColor: '#207CFE',
+                        borderWidth: 1,
+                        symbolSize: '12',
+                    },
+                    controlStyle: {
+                        show: false
+                    }
                 },
                 baseOption: {
                     tooltip: {
-                        trigger: "item",
+                        trigger: 'item', // hover触发器
+                        backgroundColor: "transparent",
+                        borderColor: "transparent",
                         formatter: function(params) {
-                            console.log("params", params)
+                            // console.log("params", params)
+                            if (params.componentType === "timeline" || !params.data) return
                                 // return params
                             let htmlStr = `
-                                            <div style='font-size:18px;'> ${params.name}</div>
-                                            <p style='text-align:left;margin-top:-10px;'>
-                                                区域对应数据value：${params.name}<br/>
-                                                性能perf：${params.name}<br/>
-                                                下载速度downloadSpeep：${params.name}<br/>
-                                                可用性usability：${params.name}<br/>
-                                                监测点数point：${params.name}<br/>
-                                            </p>
-                                            `
+                                        <div class="maptooltip_box">
+                                            <h4>中标情况</h4>
+                                            <div class="maptooltip_cont">
+                                                <p>${params.data.name} <span>张毅伟</span> 中标${params.data.value}W</p>
+                                            </div>
+                                        </div>
+                                        `
                             return htmlStr;
                         }
                     },
-                    // tooltip: {},
                     title: {
                         text: '',
                         textAlign: 'center',
@@ -1120,13 +1198,58 @@ new Vue({
                             color: "#fff"
                         }
                     },
-
+                    geo: {
+                        map: 'china',
+                        roam: true,
+                        zoom: 1.4,
+                        scaleLimit: {
+                            min: 0.7,
+                            max: 3
+                        },
+                        // geoIndex: 2,
+                        label: {
+                            emphasis: {
+                                show: true,
+                                color: "#fff",
+                            },
+                            normal: {
+                                show: false,
+                                color: "#fff"
+                            }
+                        },
+                        // emphasis: {
+                        //     itemStyle: {
+                        //         areaColor: 'rgba(32, 124, 254, 1)',
+                        //         borderWidth: 1,
+                        //         borderColor: 'rgba(0, 255, 246, 1)'
+                        //     }
+                        // },
+                        itemStyle: {
+                            normal: {
+                                borderColor: 'rgba(0, 0, 0, 0.2)'
+                            },
+                            emphasis: {
+                                areaColor: 'rgba(32, 124, 254, 1)',
+                                borderWidth: 1,
+                                borderColor: 'rgba(0, 255, 246, 1)',
+                                // shadowOffsetX: 0,
+                                // shadowOffsetY: 0,
+                                // shadowBlur: 20,
+                                // borderWidth: 0,
+                                // shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    },
                 },
-                options: [{
+                options: []
+            };
+            for (var i = 0; i < this.mapData.length; i++) {
+
+                option.options.push({
                     series: [{
                         type: "map",
                         mapType: "china",
-                        roam: true,
+                        geoIndex: 0,
                         // zoom: 2.2,
                         scaleLimit: {
                             min: 0.7,
@@ -1136,7 +1259,7 @@ new Vue({
                         label: {
                             emphasis: {
                                 show: true,
-                                color: "#fff"
+                                color: "#fff",
                             },
                             normal: {
                                 show: false,
@@ -1145,134 +1268,32 @@ new Vue({
                         },
                         emphasis: {
                             itemStyle: {
-                                areaColor: "#3066ba",
-                                borderColor: "#00FFF6"
-                            },
+                                areaColor: 'rgba(32, 124, 254, 1)',
+                                borderWidth: 1,
+                                borderColor: 'rgba(0, 255, 246, 1)'
+                            }
                         },
-                        data: this.mapData
+                        data: this.mapData[i].data
                     }]
-                }]
-            };
-
-            $mapBox.setOption(option);
-        },
-        initMap() {
-            // mapBox
-            let $mapBox = echarts.init(document.getElementById("mapBox"))
-
-            // 指定图表的配置项和数据
-            let option = barOptionMobiSub = {
-                baseOption: {
-                    timeline: {
-                        axisType: 'category',
-                        realtime: true,
-                        autoPlay: false,
-                        symbolSize: 8,
-                        orient: 'vertical',
-                        inverse: true,
-                        // z: 2,
-                        top: 30,
-                        right: 'auto',
-                        bottom: 10,
-                        left: '80%',
-                        data: [],
-                        label: {
-                            interval: 0,
-                            color: '#1781bf'
-                        },
-                        // symbol: 'roundRect',
-                        symbol: 'pin',
-                        lineStyle: {
-                            show: true,
-                            color: '#1781bf',
-                            width: 1,
-                            type: 'dotted'
-                        },
-                        controlStyle: {
-                            showPlayBtn: false,
-                            showPrevBtn: false,
-                            showNextBtn: false
-                        },
-                        itemStyle: {
-                            color: '#1781bf'
-                        },
-                        checkpointStyle: {
-                            symbol: 'none'
-                        },
-                        tooltip: {
-                            formatter: []
-                        },
-                        grid: { containLabel: true },
-                        series: [{ type: 'bar' }]
-                    }
-                },
-                options: [{
-                    title: {
-                        text: '',
-                        left: '30%'
-                    },
-                    legend: {
-                        data: ['累积流量', '累积耗电'],
-                        orient: 'vertical',
-                        left: 0
-                    },
-                    toolbox: {
-                        feature: {
-                            dataView: {}
-                        }
-                    },
-                    tooltip: {},
-                    xAxis: {
-                        position: 'top',
-                        axisLabel: {
-                            rotate: 45
-                        }
-                    },
-                    yAxis: {
-                        data: [],
-                        splitLine: {
-                            show: false
-                        },
-                        axisLabel: {
-                            interval: 0,
-                            rotate: -45
-                        },
-                        offset: 0,
-                        gridIndex: 0,
-                        triggerEvent: true
-                    },
-                    grid: {
-                        left: '20%',
-                        right: '20%'
-                            // bottom: 80
-                    },
-                    series: [{
-                            name: '累积流量',
-                            type: 'bar',
-                            data: [],
-                            animationDelay: function(idx) {
-                                return idx * 10
-                            }
-                        },
-                        {
-                            name: '累积耗电',
-                            type: 'bar',
-                            data: [],
-                            animationDelay: function(idx) {
-                                return idx * 10 + 100
-                            }
-                        }
-                    ],
-                    animationEasing: 'elasticOut',
-                    animationDelayUpdate: function(idx) {
-                        return idx * 5
-                    }
-                }]
+                })
             }
-
-            // 使用刚指定的配置项和数据显示图表。
             $mapBox.setOption(option);
+
+            let index = 0; //播放所在下标
+            // this.mTime = setInterval(function() {
+            //     $mapBox.dispatchAction({
+            //         type: 'showTip',
+            //         seriesIndex: 0,
+            //         dataIndex: index
+            //     });
+            //     index++;
+            //     if (index >= option.options.series[0].data.length) {
+            //         index = 0;
+            //     }
+            //     clearInterval(this.mTime)
+            // }, 2000);
         },
+
         initProjectIncome() {
             let $incomepBox = echarts.init(document.getElementById("projectIncome"));
             window.addEventListener('resize', function() {
@@ -1356,7 +1377,7 @@ new Vue({
                     splitLine: { // gird区域中的分割线
                         show: true, // 是否显示
                         lineStyle: {
-                            color: 'rgba(255, 255, 255, 0.1)',
+                            color: 'rgba(255, 255, 255, 0.05)',
                             width: 1,
                             type: 'solid'
                         }
@@ -1387,28 +1408,15 @@ new Vue({
                             normal: {
                                 barMaxWidth: '20%',
                                 barBorderRadius: 100,
-                                color: '#00FBCC',
-                                // color: function(params) {
-                                //     var color;
-
-                                //     color = {
-                                //         type: "linear",
-                                //         x: 0,
-                                //         y: 1,
-                                //         x2: 0,
-                                //         y2: 0,
-                                //         colorStops: [{
-                                //                 offset: 0,
-                                //                 color: "#00FBCC" // 0% 处的颜色
-                                //             },
-                                //             {
-                                //                 offset: 1,
-                                //                 color: "#00FBCC" // 100% 处的颜色
-                                //             }
-                                //         ]
-                                //     }
-                                //     return color;
-                                // },
+                                color: '#00FBCC'
+                            }
+                        },
+                        label: {
+                            show: true,
+                            position: 'top',
+                            textStyle: {
+                                // color: '#fff',
+                                // fontSize: 10
                             }
                         },
                         symbolRepeat: true,
@@ -1428,6 +1436,14 @@ new Vue({
                                 barMaxWidth: '20%',
                                 barBorderRadius: 100,
                                 color: '#FFEA00'
+                            }
+                        },
+                        label: {
+                            show: true,
+                            position: 'top',
+                            textStyle: {
+                                // color: '#fff',
+                                // fontSize: 10
                             }
                         },
                         symbolRepeat: true,
@@ -1450,6 +1466,14 @@ new Vue({
                                 color: '#0091FF'
                             }
                         },
+                        label: {
+                            show: true,
+                            position: 'top',
+                            textStyle: {
+                                // color: '#fff',
+                                // fontSize: 10
+                            }
+                        },
                         symbolRepeat: true,
                         symbolSize: ['60%', '60%'],
                         data: datas2,
@@ -1470,6 +1494,14 @@ new Vue({
                                 color: '#6DD400'
                             }
                         },
+                        label: {
+                            show: true,
+                            position: 'top',
+                            textStyle: {
+                                // color: '#fff',
+                                // fontSize: 10
+                            }
+                        },
                         symbolRepeat: true,
                         symbolSize: ['60%', '60%'],
                         data: datas3,
@@ -1487,11 +1519,18 @@ new Vue({
             });
             let option = {
                 grid: {
-                    left: '3%',
-                    right: '20%',
+                    left: '5%',
+                    // right: '20%',
                     bottom: '3%',
-                    top: '10%',
+                    // top: '10%',
                     containLabel: true
+                },
+                legend: {
+                    type: "scroll",
+                    textStyle: {
+                        color: "#fff"
+                    },
+                    data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
                 },
                 xAxis: {
                     type: 'category',
@@ -1517,6 +1556,7 @@ new Vue({
                 },
                 yAxis: {
                     type: 'value',
+
                     nameLocation: 'end', // 轴名称相对位置value
                     offset: 5, // x轴相对于默认位置的偏移
                     nameTextStyle: { // 坐标轴名称样式
@@ -1536,7 +1576,7 @@ new Vue({
                     splitLine: { // gird区域中的分割线
                         show: true, // 是否显示
                         lineStyle: {
-                            color: 'rgba(255, 255, 255, 0.1)',
+                            color: 'rgba(255, 255, 255, 0.05)',
                             width: 1,
                             type: 'solid'
                         }
@@ -1545,16 +1585,33 @@ new Vue({
                         show: false
                     }
                 },
+                tooltip: {
+                    show: false,
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        label: {
+                            backgroundColor: '#6a7985'
+                        }
+                    }
+                },
                 series: [{
                         name: '邮件营销',
                         type: 'line',
                         stack: '总量',
                         symbol: "none",
-                        label: {
+                        markPoint: {
+
+                            itemStyle: { opacity: 0.6 },
+                            data: [
+                                { type: 'max', name: '最大值' },
+                                { type: 'min', name: '最小值' }
+                            ]
+                        },
+                        endLabel: {
                             show: true,
                             color: "rgba(255, 255, 255, 0.8)", // inherit 同色系
                             formatter: function(params) {
-                                console.log("params", params)
                                 return params.seriesName;
                             }
                         },
@@ -1565,7 +1622,7 @@ new Vue({
                         type: 'line',
                         stack: '总量',
                         symbol: "none",
-                        label: {
+                        endLabel: {
                             show: true,
                             color: "rgba(255, 255, 255, 0.8)", // inherit 同色系
                             formatter: function(params) {
@@ -1714,7 +1771,6 @@ new Vue({
             };
             $reviewBox.setOption(option);
         },
-
         initClassfiyBox() {
             let lineStyle = {
                 // color: '#5470C6',
@@ -1731,13 +1787,14 @@ new Vue({
                 },
                 legend: {
                     type: "scroll",
+                    textStyle: {
+                        color: "#fff"
+                    },
                     data: ['邮件营销', '联盟广告', '视频广告', '直接访问'],
                     // orient: 'vertical',
                     bottom: 0,
                     icon: 'square',
-                    textStyle: {
-                        color: "#fff"
-                    }
+
                 },
                 xAxis: {
                     type: 'category',
@@ -1785,7 +1842,7 @@ new Vue({
                     splitLine: { // gird区域中的分割线
                         show: true, // 是否显示
                         lineStyle: {
-                            color: 'rgba(255, 255, 255, 0.1)',
+                            color: 'rgba(255, 255, 255, 0.05)',
                             width: 1,
                             type: 'solid'
                         }
@@ -1887,6 +1944,12 @@ new Vue({
                     top: '10%',
                     containLabel: true
                 },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                        // type: 'cross' // 十字线显示
+                    }
+                },
                 xAxis: {
                     type: 'category',
                     boundaryGap: false,
@@ -1930,7 +1993,7 @@ new Vue({
                     splitLine: { // gird区域中的分割线
                         show: true, // 是否显示
                         lineStyle: {
-                            color: 'rgba(255, 255, 255, 0.1)',
+                            color: 'rgba(255, 255, 255, 0.05)',
                             width: 1,
                             type: 'solid'
                         }
@@ -1944,13 +2007,17 @@ new Vue({
                         type: 'line',
                         stack: '总量',
                         symbol: "none",
-                        endLabel: {
+                        label: {
                             show: true,
-                            color: "rgba(255, 255, 255, 0.8)", // inherit 同色系
-                            formatter: function(params) {
-                                return params.seriesName;
-                            }
+                            // position: 'top'
                         },
+                        // endLabel: {
+                        //     show: true,
+                        //     color: "rgba(255, 255, 255, 0.8)", // inherit 同色系
+                        //     formatter: function(params) {
+                        //         return params.seriesName;
+                        //     }
+                        // },
                         data: [120, 132, 101, 134, 90, 230, 210]
                     },
                     {
@@ -2024,31 +2091,70 @@ new Vue({
                 $moneyBox.resize()
             })
 
-            let option = {
-                title: {
-                    text: ""
-                },
-                grid: {
-                    left: '3%',
-                    right: '20%',
-                    bottom: '3%',
-                    top: '10%',
-                    containLabel: true
-                },
-                tooltip: {
-                    trigger: 'axis',
-                    showDelay: 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
-                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
-                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-                    }
-                },
+            // $moneyBox.setOption(option)
+            // var myChart = echarts.init(document.getElementById('main1'));
+            let data = {
+                    xData: [
+                        ...['2021', '2020', '2019', ''],
+                        ...['2021', '2020', '2019', ''],
+                        ...['2021', '2020', '2019', ''],
+                        ...['2021', '2020', '2019', ''],
+                        ...['2021', '2020', '2019', ''],
+                        ...['2021', '2020', '2019', '']
+                    ],
+                    yData: [
+                        ...[0.1, "", "", ""],
+                        ...[0.25, "", "", ""],
+                        ...[0.33, "", "", ""],
+                        ...[0.72, "", "", ""],
+                        ...[0.33, "", "", ""],
+                        ...[0.72, "", "", ""]
+                    ], //毛利
+                    yData1: [
+                        ...[0.13, "", "", ""],
+                        ...[0.95, "", "", ""],
+                        ...[0.13, "", "", ""],
+                        ...[0.72, "", "", ""],
+                        ...[0.33, "", "", ""],
+                        ...[0.72, "", "", ""]
+                    ], //计划
+                    yData2: [
+                            ...[0.71, 0.5, 0.1, ""],
+                            ...[0.5, 0.3, 0.39, ""],
+                            ...[0.53, 0.36, 0.57, ""],
+                            ...[0.72, 0.45, 0.2, ""],
+                            ...[0.33, 0.36, 0.57, ""],
+                            ...[0.42, 0.95, 0.2, ""]
+                        ] //实际
+                }
+                /**
+                    双X轴标签对应，伪实现思路：
+                    底部的标签也是柱状图，对应包含的区域为上方X轴条数占总数的比例，设为宽度即可
+                */
+            $moneyBox.setOption({
                 legend: {
-                    data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+                    right: 0,
+                    data: ['中标毛利', '计划中标', '实际中标'],
+                    textStyle: {
+                        color: "#fff"
+                    },
+                    icon: "square"
                 },
-                calculable: true,
+                grid: [{
+                    top: "20%",
+                    left: "8%",
+                    right: "5%",
+                    // bottom: 101
+                }, {
+                    height: 60,
+                    bottom: "0%",
+                    right: "5%",
+                }],
                 xAxis: [{
                     type: 'category',
-                    boundaryGap: false,
+                    data: data.xData,
+                    gridIndex: 0,
+                    interval: 0,
                     axisLabel: {
                         verticalAlign: 'middle',
                         margin: 20,
@@ -2056,7 +2162,6 @@ new Vue({
                     },
                     axisLine: {
                         show: true,
-                        // color: '#fff',
                         lineStyle: {
                             color: 'rgba(255, 255, 255, 0.35)',
                             width: 1,
@@ -2066,12 +2171,22 @@ new Vue({
                     axisTick: {
                         show: false
                     },
-                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                    zlevel: 2
+                }, {
+                    type: 'category',
+                    gridIndex: 1,
+                    axisLine: {
+                        length: 8,
+                        show: false
+                    },
+                    zlevel: 1
                 }],
                 yAxis: [{
                     type: 'value',
+                    name: '亿元', // 轴名称
                     nameLocation: 'end', // 轴名称相对位置value
                     offset: 5, // x轴相对于默认位置的偏移
+                    gridIndex: 0,
                     nameTextStyle: { // 坐标轴名称样式
                         color: 'rgba(255, 255, 255, 0.8)',
                         padding: [0, 0, 10, -40] // 坐标轴名称相对位置
@@ -2089,7 +2204,7 @@ new Vue({
                     splitLine: { // gird区域中的分割线
                         show: true, // 是否显示
                         lineStyle: {
-                            color: 'rgba(255, 255, 255, 0.1)',
+                            color: 'rgba(255, 255, 255, 0.05)',
                             width: 1,
                             type: 'solid'
                         }
@@ -2097,46 +2212,236 @@ new Vue({
                     axisTick: {
                         show: false
                     }
-
+                }, {
+                    type: 'value',
+                    gridIndex: 1,
+                    axisLabel: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    },
+                    splitLine: {
+                        show: false
+                    },
+                    axisTick: {
+                        show: false
+                    }
                 }],
                 series: [{
-                        name: '直接访问',
-                        type: 'bar',
-                        stack: '总量',
-                        itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
-                        data: [320, 302, 301, 334, 390, 330, 320]
+                    data: data.yData,
+                    name: "中标毛利",
+                    type: 'bar',
+                    stack: 'total',
+                    itemStyle: {
+                        normal: {
+                            // barMaxWidth: '20%',
+                            // barBorderRadius: 100,
+                            color: '#FFEA00'
+                        }
                     },
-                    {
-                        name: '邮件营销',
-                        type: 'bar',
-                        stack: '总量',
-                        itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
-                        data: [120, 132, 101, 134, 90, 230, 210]
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        textStyle: {
+                            color: '#0D1641',
+                            fontSize: 10
+                        },
                     },
-                    {
-                        name: '联盟广告',
-                        type: 'bar',
-                        stack: '总量',
-                        itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
-                        data: [220, 182, 191, 234, 290, 330, 310]
+                    xAxisIndex: 0,
+                    yAxisIndex: 0
+                }, {
+                    data: data.yData2,
+                    name: "实际中标",
+                    type: 'bar',
+                    stack: 'total',
+                    itemStyle: {
+                        normal: {
+                            // barMaxWidth: '20%',
+                            // barBorderRadius: 100,
+                            color: '#0091FF'
+                        }
                     },
-                    {
-                        name: '视频广告',
-                        type: 'bar',
-                        stack: '总量',
-                        itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
-                        data: [150, 212, 201, 154, 190, 330, 410]
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        textStyle: {
+                            color: '#fff',
+                            fontSize: 10
+                        }
                     },
-                    {
-                        name: '搜索引擎',
-                        type: 'bar',
-                        stack: '总量',
-                        itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
-                        data: [820, 832, 901, 934, 1290, 1330, 1320]
-                    }
-                ]
-            }
-            $moneyBox.setOption(option)
+                    xAxisIndex: 0,
+                    yAxisIndex: 0
+                }, {
+                    data: data.yData1,
+                    name: "计划中标",
+                    type: 'bar',
+                    stack: 'total',
+                    itemStyle: {
+                        normal: {
+                            // barMaxWidth: '20%',
+                            // barBorderRadius: 100,
+                            color: '#00FFF6'
+                        }
+                    },
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        textStyle: {
+                            color: '#0D1641',
+                            fontSize: 10
+                        }
+                    },
+                    xAxisIndex: 0,
+                    yAxisIndex: 0
+                }, {
+                    data: [{
+                        name: '政府机关',
+                        value: 1
+                    }],
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        formatter: '{b}',
+                        offset: [-15, 10],
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    type: 'bar',
+                    barGap: 0,
+                    barWidth: '16.66666%',
+                    itemStyle: {
+                        normal: {
+                            color: 'transparent'
+                        }
+                    },
+                    xAxisIndex: 1,
+                    yAxisIndex: 1
+                }, {
+                    data: [{
+                        name: '医疗卫生',
+                        value: 1
+                    }],
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        formatter: '{b}',
+                        offset: [-15, 10],
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    type: 'bar',
+                    barGap: 0,
+                    barWidth: '16.66666%',
+                    itemStyle: {
+                        normal: {
+                            color: 'transparent'
+                        }
+                    },
+                    xAxisIndex: 1,
+                    yAxisIndex: 1
+                }, {
+                    data: [{
+                        name: '交通运输',
+                        value: 1
+                    }],
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        formatter: '{b}',
+                        offset: [-20, 10],
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    type: 'bar',
+                    barGap: 0,
+                    barWidth: '16.66666%',
+                    itemStyle: {
+                        normal: {
+                            color: 'transparent'
+                        }
+                    },
+                    xAxisIndex: 1,
+                    yAxisIndex: 1
+                }, {
+                    data: [{
+                        name: '汽车工业',
+                        value: 1
+                    }],
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        formatter: '{b}',
+                        offset: [-20, 10],
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    type: 'bar',
+                    barGap: 0,
+                    barWidth: '18.1818%',
+                    itemStyle: {
+                        normal: {
+                            color: 'transparent'
+                        }
+                    },
+                    xAxisIndex: 1,
+                    yAxisIndex: 1
+                }, {
+                    data: [{
+                        name: '钢铁制金',
+                        value: 1
+                    }],
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        formatter: '{b}',
+                        offset: [-30, 10],
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    type: 'bar',
+                    barCategoryGap: 0,
+                    barGap: 0,
+                    barWidth: '16.66666%',
+                    itemStyle: {
+                        normal: {
+                            color: 'transparent'
+                        }
+                    },
+                    xAxisIndex: 1,
+                    yAxisIndex: 1
+                }, {
+                    data: [{
+                        name: '政企云',
+                        value: 1
+                    }],
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        formatter: '{b}',
+                        offset: [-30, 10],
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    type: 'bar',
+                    barCategoryGap: 0,
+                    barGap: 0,
+                    barWidth: '16.66666%',
+                    itemStyle: {
+                        normal: {
+                            color: 'transparent'
+                        }
+                    },
+                    xAxisIndex: 1,
+                    yAxisIndex: 1
+                }]
+            });
         },
         initMoneyBox1() {
             let $moneyBox = echarts.init(document.getElementById("moneyBox"))

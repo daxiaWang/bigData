@@ -65,7 +65,7 @@
                     <div class="chart_box import_box">
                         <div v-for="item in importData" class="import_item">
                             <div class="import_left" :class="item.ename">{{item.source}}</div>
-                            <div class="swiper-container" :ref="item.ename + 'Ref'">
+                            <div class="swiper-container" :class="item.ename+'-container'" :ref="item.ename + 'Ref'">
                                 <div class="swiper-wrapper">
                                     <dl class="swiper-slide" v-for="(ite, index) in item.data">
                                         <dd>{{ite.produce}}</dd>
